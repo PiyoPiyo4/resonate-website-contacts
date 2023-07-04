@@ -78,7 +78,7 @@ function App() {
   const iconscoutSize = screenMobile ? 15 : 20
   return (
     <ThemeProvider theme={theme}>
-      <div className='background'>
+      <div className='background' sx={{ fontFamily: 'Quicksand, sans-serif' }}>
         <Box sx={{ padding: '2rem', color: '#101019'}}>
           <Typography variant="h2" sx={{ marginBottom: '1rem', textAlign: 'center', fontWeight: 'bold' }}>
             Contact List
