@@ -55,11 +55,10 @@ function App() {
     }
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchContacts();
     // console.log(contacts)
-  }, []);
+  }, );
 
   const handleCardClick = (contactId) => {
     setExpanded(contactId === expanded ? -1 : contactId);
