@@ -49,7 +49,6 @@ function App() {
       const sortedData = [...data].sort((a, b) =>
       a.name > b.name ? 1 : -1,
       );
-      console.log(sortedData);
       setContacts(sortedData);
     } catch (error) {
       alert('Error fetching contacts:', error);
@@ -72,7 +71,7 @@ function App() {
         'Quicksand', 
         'sans-serif',
       ].join(','),
-      fontSize: screenMobile ? 10 : 14
+      fontSize: screenMobile ? 11 : 14
     },
   });
 
@@ -87,19 +86,19 @@ function App() {
           {contacts.map((contact) => (
             <Card
               key={contact.id}
-              sx={{ margin: '0 auto', marginBottom: '1rem', cursor: 'pointer', width: '65%', backgroundColor: '#545284' , color: '#e3e3ed'}}
+              sx={{ margin: '0 auto', marginBottom: '1rem', cursor: 'pointer', width: screenMobile ? '85%' : '65%', backgroundColor: '#545284' , color: '#e3e3ed'}}
               onClick={() => handleCardClick(contact.id)}
               className='card'
             >
               <CardContent sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', color: '#e3e3ed'}}>
                 <div>
-                  <Typography variant="h6" component="div" sx={{ marginBottom: '0.5rem' }}>
+                  <Typography variant="h5" component="div" sx={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
                     {contact.name}
                   </Typography>
                   <Box sx={{display: 'flex' , color: '#e3e3ed'}}>
                     <UilPhone size={iconscoutSize} /> 
-                    <Typography variant="h8" component="div" sx={{ marginLeft: '5px', marginTop: '-1px' }}>
-                      {contact.phone}
+                    <Typography variant="h6" component="div" sx={{ marginLeft: '5px', marginTop: '-1px' }}>
+                      {contact.phone} 0
                     </Typography>
                   </Box>
                 </div>
